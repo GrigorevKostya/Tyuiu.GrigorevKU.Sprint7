@@ -31,7 +31,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStripMainMenu_GKU = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemFile_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpen_GKU = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,24 +52,24 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.buttonOpenBookBase_GKU = new System.Windows.Forms.Button();
             this.panelButtons_GKU = new System.Windows.Forms.Panel();
             this.groupBoxButtons_GKU = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.groupBoxUsersButtons_GKU = new System.Windows.Forms.GroupBox();
+            this.buttonChangeUser_GKU = new System.Windows.Forms.Button();
+            this.buttonUsersBase_GKU = new System.Windows.Forms.Button();
+            this.buttonFindUser_GKU = new System.Windows.Forms.Button();
+            this.buttonDeleteUser_GKU = new System.Windows.Forms.Button();
+            this.buttonAddUser_GKU = new System.Windows.Forms.Button();
+            this.groupBoxBookButtons_GKU = new System.Windows.Forms.GroupBox();
+            this.buttonChangeBook_GKU = new System.Windows.Forms.Button();
+            this.buttonFindBook_GKU = new System.Windows.Forms.Button();
+            this.buttonDeleteBook_GKU = new System.Windows.Forms.Button();
+            this.buttonAddBook_GKU = new System.Windows.Forms.Button();
+            this.buttonBooks_GKU = new System.Windows.Forms.Button();
             this.splitterData_GKU = new System.Windows.Forms.Splitter();
             this.panelData_GKU = new System.Windows.Forms.Panel();
             this.groupBoxData_GKU = new System.Windows.Forms.GroupBox();
             this.groupBoxInfo_GKU = new System.Windows.Forms.GroupBox();
             this.dataGridViewMain_GKU = new System.Windows.Forms.DataGridView();
             this.toolTipButton_GKU = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBoxBookButtons_GKU = new System.Windows.Forms.GroupBox();
-            this.groupBoxUsersButtons_GKU = new System.Windows.Forms.GroupBox();
-            this.buttonBooks_GKU = new System.Windows.Forms.Button();
-            this.buttonAddBook_GKU = new System.Windows.Forms.Button();
-            this.buttonDeleteBook_GKU = new System.Windows.Forms.Button();
-            this.buttonFindBook_GKU = new System.Windows.Forms.Button();
-            this.buttonChangeBook_GKU = new System.Windows.Forms.Button();
-            this.buttonChangeUser_GKU = new System.Windows.Forms.Button();
-            this.buttonFindUser_GKU = new System.Windows.Forms.Button();
-            this.buttonDeleteUser_GKU = new System.Windows.Forms.Button();
-            this.buttonAddUser_GKU = new System.Windows.Forms.Button();
             this.openFileDialogTask_GKU = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogTask_GKU = new System.Windows.Forms.SaveFileDialog();
             this.menuStripMainMenu_GKU.SuspendLayout();
@@ -77,11 +77,11 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxIcons_GKU.SuspendLayout();
             this.panelButtons_GKU.SuspendLayout();
             this.groupBoxButtons_GKU.SuspendLayout();
+            this.groupBoxUsersButtons_GKU.SuspendLayout();
+            this.groupBoxBookButtons_GKU.SuspendLayout();
             this.panelData_GKU.SuspendLayout();
             this.groupBoxData_GKU.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_GKU)).BeginInit();
-            this.groupBoxBookButtons_GKU.SuspendLayout();
-            this.groupBoxUsersButtons_GKU.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMainMenu_GKU
@@ -161,13 +161,13 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // ToolStripMenuItemAbout_GKU
             // 
             this.ToolStripMenuItemAbout_GKU.Name = "ToolStripMenuItemAbout_GKU";
-            this.ToolStripMenuItemAbout_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemAbout_GKU.Size = new System.Drawing.Size(187, 26);
             this.ToolStripMenuItemAbout_GKU.Text = "О программе";
             // 
             // ToolStripMenuItemInstruction_GKU
             // 
             this.ToolStripMenuItemInstruction_GKU.Name = "ToolStripMenuItemInstruction_GKU";
-            this.ToolStripMenuItemInstruction_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemInstruction_GKU.Size = new System.Drawing.Size(187, 26);
             this.ToolStripMenuItemInstruction_GKU.Text = "Руководство ";
             // 
             // panelIcons_GKU
@@ -264,15 +264,138 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxButtons_GKU.TabIndex = 0;
             this.groupBoxButtons_GKU.TabStop = false;
             // 
-            // button4
+            // groupBoxUsersButtons_GKU
             // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(78, 61);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 32);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "База Читателей";
-            this.button4.UseVisualStyleBackColor = true;
+            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonChangeUser_GKU);
+            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonUsersBase_GKU);
+            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonFindUser_GKU);
+            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonDeleteUser_GKU);
+            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonAddUser_GKU);
+            this.groupBoxUsersButtons_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxUsersButtons_GKU.Location = new System.Drawing.Point(3, 283);
+            this.groupBoxUsersButtons_GKU.Name = "groupBoxUsersButtons_GKU";
+            this.groupBoxUsersButtons_GKU.Size = new System.Drawing.Size(315, 270);
+            this.groupBoxUsersButtons_GKU.TabIndex = 2;
+            this.groupBoxUsersButtons_GKU.TabStop = false;
+            this.groupBoxUsersButtons_GKU.Text = "Работа с базой читателей";
+            // 
+            // buttonChangeUser_GKU
+            // 
+            this.buttonChangeUser_GKU.Location = new System.Drawing.Point(163, 126);
+            this.buttonChangeUser_GKU.Name = "buttonChangeUser_GKU";
+            this.buttonChangeUser_GKU.Size = new System.Drawing.Size(119, 44);
+            this.buttonChangeUser_GKU.TabIndex = 8;
+            this.buttonChangeUser_GKU.Text = "Изменить данные читателя";
+            this.buttonChangeUser_GKU.UseVisualStyleBackColor = true;
+            this.buttonChangeUser_GKU.Visible = false;
+            // 
+            // buttonUsersBase_GKU
+            // 
+            this.buttonUsersBase_GKU.Enabled = false;
+            this.buttonUsersBase_GKU.Location = new System.Drawing.Point(78, 61);
+            this.buttonUsersBase_GKU.Name = "buttonUsersBase_GKU";
+            this.buttonUsersBase_GKU.Size = new System.Drawing.Size(159, 32);
+            this.buttonUsersBase_GKU.TabIndex = 0;
+            this.buttonUsersBase_GKU.Text = "База Читателей";
+            this.buttonUsersBase_GKU.UseVisualStyleBackColor = true;
+            // 
+            // buttonFindUser_GKU
+            // 
+            this.buttonFindUser_GKU.Location = new System.Drawing.Point(35, 176);
+            this.buttonFindUser_GKU.Name = "buttonFindUser_GKU";
+            this.buttonFindUser_GKU.Size = new System.Drawing.Size(122, 44);
+            this.buttonFindUser_GKU.TabIndex = 7;
+            this.buttonFindUser_GKU.Text = "Найти читателя";
+            this.buttonFindUser_GKU.UseVisualStyleBackColor = true;
+            this.buttonFindUser_GKU.Visible = false;
+            // 
+            // buttonDeleteUser_GKU
+            // 
+            this.buttonDeleteUser_GKU.Location = new System.Drawing.Point(163, 176);
+            this.buttonDeleteUser_GKU.Name = "buttonDeleteUser_GKU";
+            this.buttonDeleteUser_GKU.Size = new System.Drawing.Size(119, 44);
+            this.buttonDeleteUser_GKU.TabIndex = 6;
+            this.buttonDeleteUser_GKU.Text = "Удалить читателя";
+            this.buttonDeleteUser_GKU.UseVisualStyleBackColor = true;
+            this.buttonDeleteUser_GKU.Visible = false;
+            // 
+            // buttonAddUser_GKU
+            // 
+            this.buttonAddUser_GKU.Location = new System.Drawing.Point(35, 126);
+            this.buttonAddUser_GKU.Name = "buttonAddUser_GKU";
+            this.buttonAddUser_GKU.Size = new System.Drawing.Size(122, 44);
+            this.buttonAddUser_GKU.TabIndex = 5;
+            this.buttonAddUser_GKU.Text = "Добавить читателя";
+            this.buttonAddUser_GKU.UseVisualStyleBackColor = true;
+            this.buttonAddUser_GKU.Visible = false;
+            // 
+            // groupBoxBookButtons_GKU
+            // 
+            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonChangeBook_GKU);
+            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonFindBook_GKU);
+            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonDeleteBook_GKU);
+            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonAddBook_GKU);
+            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonBooks_GKU);
+            this.groupBoxBookButtons_GKU.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxBookButtons_GKU.Location = new System.Drawing.Point(3, 18);
+            this.groupBoxBookButtons_GKU.Name = "groupBoxBookButtons_GKU";
+            this.groupBoxBookButtons_GKU.Size = new System.Drawing.Size(315, 265);
+            this.groupBoxBookButtons_GKU.TabIndex = 1;
+            this.groupBoxBookButtons_GKU.TabStop = false;
+            this.groupBoxBookButtons_GKU.Text = "Работа с базой книг";
+            // 
+            // buttonChangeBook_GKU
+            // 
+            this.buttonChangeBook_GKU.Location = new System.Drawing.Point(163, 113);
+            this.buttonChangeBook_GKU.Name = "buttonChangeBook_GKU";
+            this.buttonChangeBook_GKU.Size = new System.Drawing.Size(119, 44);
+            this.buttonChangeBook_GKU.TabIndex = 4;
+            this.buttonChangeBook_GKU.Text = "Изменить книгу";
+            this.buttonChangeBook_GKU.UseVisualStyleBackColor = true;
+            this.buttonChangeBook_GKU.Visible = false;
+            // 
+            // buttonFindBook_GKU
+            // 
+            this.buttonFindBook_GKU.Location = new System.Drawing.Point(35, 163);
+            this.buttonFindBook_GKU.Name = "buttonFindBook_GKU";
+            this.buttonFindBook_GKU.Size = new System.Drawing.Size(122, 40);
+            this.buttonFindBook_GKU.TabIndex = 3;
+            this.buttonFindBook_GKU.Text = "Найти книгу";
+            this.buttonFindBook_GKU.UseVisualStyleBackColor = true;
+            this.buttonFindBook_GKU.Visible = false;
+            // 
+            // buttonDeleteBook_GKU
+            // 
+            this.buttonDeleteBook_GKU.Location = new System.Drawing.Point(163, 163);
+            this.buttonDeleteBook_GKU.Name = "buttonDeleteBook_GKU";
+            this.buttonDeleteBook_GKU.Size = new System.Drawing.Size(119, 40);
+            this.buttonDeleteBook_GKU.TabIndex = 2;
+            this.buttonDeleteBook_GKU.Text = "Удалить книгу";
+            this.buttonDeleteBook_GKU.UseVisualStyleBackColor = true;
+            this.buttonDeleteBook_GKU.Visible = false;
+            this.buttonDeleteBook_GKU.Click += new System.EventHandler(this.buttonDeleteBook_GKU_Click);
+            // 
+            // buttonAddBook_GKU
+            // 
+            this.buttonAddBook_GKU.Location = new System.Drawing.Point(35, 113);
+            this.buttonAddBook_GKU.Name = "buttonAddBook_GKU";
+            this.buttonAddBook_GKU.Size = new System.Drawing.Size(122, 44);
+            this.buttonAddBook_GKU.TabIndex = 1;
+            this.buttonAddBook_GKU.Text = "Добавить книгу";
+            this.buttonAddBook_GKU.UseVisualStyleBackColor = true;
+            this.buttonAddBook_GKU.Visible = false;
+            this.buttonAddBook_GKU.Click += new System.EventHandler(this.buttonAddBook_GKU_Click);
+            // 
+            // buttonBooks_GKU
+            // 
+            this.buttonBooks_GKU.Enabled = false;
+            this.buttonBooks_GKU.Location = new System.Drawing.Point(78, 53);
+            this.buttonBooks_GKU.Name = "buttonBooks_GKU";
+            this.buttonBooks_GKU.Size = new System.Drawing.Size(159, 32);
+            this.buttonBooks_GKU.TabIndex = 0;
+            this.buttonBooks_GKU.Text = "База книг";
+            this.buttonBooks_GKU.UseVisualStyleBackColor = true;
+            this.buttonBooks_GKU.Click += new System.EventHandler(this.buttonBooks_GKU_Click);
             // 
             // splitterData_GKU
             // 
@@ -315,14 +438,14 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // dataGridViewMain_GKU
             // 
             this.dataGridViewMain_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewMain_GKU.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewMain_GKU.Location = new System.Drawing.Point(3, 18);
             this.dataGridViewMain_GKU.Name = "dataGridViewMain_GKU";
@@ -338,127 +461,6 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.toolTipButton_GKU.Tag = "";
             this.toolTipButton_GKU.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipButton_GKU.ToolTipTitle = "Подсказка";
-            // 
-            // groupBoxBookButtons_GKU
-            // 
-            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonChangeBook_GKU);
-            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonFindBook_GKU);
-            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonDeleteBook_GKU);
-            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonAddBook_GKU);
-            this.groupBoxBookButtons_GKU.Controls.Add(this.buttonBooks_GKU);
-            this.groupBoxBookButtons_GKU.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxBookButtons_GKU.Location = new System.Drawing.Point(3, 18);
-            this.groupBoxBookButtons_GKU.Name = "groupBoxBookButtons_GKU";
-            this.groupBoxBookButtons_GKU.Size = new System.Drawing.Size(315, 265);
-            this.groupBoxBookButtons_GKU.TabIndex = 1;
-            this.groupBoxBookButtons_GKU.TabStop = false;
-            this.groupBoxBookButtons_GKU.Text = "Работа с базой книг";
-            // 
-            // groupBoxUsersButtons_GKU
-            // 
-            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonChangeUser_GKU);
-            this.groupBoxUsersButtons_GKU.Controls.Add(this.button4);
-            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonFindUser_GKU);
-            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonDeleteUser_GKU);
-            this.groupBoxUsersButtons_GKU.Controls.Add(this.buttonAddUser_GKU);
-            this.groupBoxUsersButtons_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxUsersButtons_GKU.Location = new System.Drawing.Point(3, 283);
-            this.groupBoxUsersButtons_GKU.Name = "groupBoxUsersButtons_GKU";
-            this.groupBoxUsersButtons_GKU.Size = new System.Drawing.Size(315, 270);
-            this.groupBoxUsersButtons_GKU.TabIndex = 2;
-            this.groupBoxUsersButtons_GKU.TabStop = false;
-            this.groupBoxUsersButtons_GKU.Text = "Работа с базой читателей";
-            // 
-            // buttonBooks_GKU
-            // 
-            this.buttonBooks_GKU.Enabled = false;
-            this.buttonBooks_GKU.Location = new System.Drawing.Point(78, 53);
-            this.buttonBooks_GKU.Name = "buttonBooks_GKU";
-            this.buttonBooks_GKU.Size = new System.Drawing.Size(159, 32);
-            this.buttonBooks_GKU.TabIndex = 0;
-            this.buttonBooks_GKU.Text = "База книг";
-            this.buttonBooks_GKU.UseVisualStyleBackColor = true;
-            this.buttonBooks_GKU.Click += new System.EventHandler(this.buttonBooks_GKU_Click);
-            // 
-            // buttonAddBook_GKU
-            // 
-            this.buttonAddBook_GKU.Location = new System.Drawing.Point(35, 113);
-            this.buttonAddBook_GKU.Name = "buttonAddBook_GKU";
-            this.buttonAddBook_GKU.Size = new System.Drawing.Size(122, 44);
-            this.buttonAddBook_GKU.TabIndex = 1;
-            this.buttonAddBook_GKU.Text = "Добавить книгу";
-            this.buttonAddBook_GKU.UseVisualStyleBackColor = true;
-            this.buttonAddBook_GKU.Visible = false;
-            // 
-            // buttonDeleteBook_GKU
-            // 
-            this.buttonDeleteBook_GKU.Location = new System.Drawing.Point(163, 163);
-            this.buttonDeleteBook_GKU.Name = "buttonDeleteBook_GKU";
-            this.buttonDeleteBook_GKU.Size = new System.Drawing.Size(119, 40);
-            this.buttonDeleteBook_GKU.TabIndex = 2;
-            this.buttonDeleteBook_GKU.Text = "Удалить книгу";
-            this.buttonDeleteBook_GKU.UseVisualStyleBackColor = true;
-            this.buttonDeleteBook_GKU.Visible = false;
-            // 
-            // buttonFindBook_GKU
-            // 
-            this.buttonFindBook_GKU.Location = new System.Drawing.Point(35, 163);
-            this.buttonFindBook_GKU.Name = "buttonFindBook_GKU";
-            this.buttonFindBook_GKU.Size = new System.Drawing.Size(122, 40);
-            this.buttonFindBook_GKU.TabIndex = 3;
-            this.buttonFindBook_GKU.Text = "Найти книгу";
-            this.buttonFindBook_GKU.UseVisualStyleBackColor = true;
-            this.buttonFindBook_GKU.Visible = false;
-            // 
-            // buttonChangeBook_GKU
-            // 
-            this.buttonChangeBook_GKU.Location = new System.Drawing.Point(163, 113);
-            this.buttonChangeBook_GKU.Name = "buttonChangeBook_GKU";
-            this.buttonChangeBook_GKU.Size = new System.Drawing.Size(119, 44);
-            this.buttonChangeBook_GKU.TabIndex = 4;
-            this.buttonChangeBook_GKU.Text = "Изменить книгу";
-            this.buttonChangeBook_GKU.UseVisualStyleBackColor = true;
-            this.buttonChangeBook_GKU.Visible = false;
-            // 
-            // buttonChangeUser_GKU
-            // 
-            this.buttonChangeUser_GKU.Location = new System.Drawing.Point(163, 126);
-            this.buttonChangeUser_GKU.Name = "buttonChangeUser_GKU";
-            this.buttonChangeUser_GKU.Size = new System.Drawing.Size(119, 44);
-            this.buttonChangeUser_GKU.TabIndex = 8;
-            this.buttonChangeUser_GKU.Text = "Изменить данные читателя";
-            this.buttonChangeUser_GKU.UseVisualStyleBackColor = true;
-            this.buttonChangeUser_GKU.Visible = false;
-            // 
-            // buttonFindUser_GKU
-            // 
-            this.buttonFindUser_GKU.Location = new System.Drawing.Point(35, 176);
-            this.buttonFindUser_GKU.Name = "buttonFindUser_GKU";
-            this.buttonFindUser_GKU.Size = new System.Drawing.Size(122, 44);
-            this.buttonFindUser_GKU.TabIndex = 7;
-            this.buttonFindUser_GKU.Text = "Найти читателя";
-            this.buttonFindUser_GKU.UseVisualStyleBackColor = true;
-            this.buttonFindUser_GKU.Visible = false;
-            // 
-            // buttonDeleteUser_GKU
-            // 
-            this.buttonDeleteUser_GKU.Location = new System.Drawing.Point(163, 176);
-            this.buttonDeleteUser_GKU.Name = "buttonDeleteUser_GKU";
-            this.buttonDeleteUser_GKU.Size = new System.Drawing.Size(119, 44);
-            this.buttonDeleteUser_GKU.TabIndex = 6;
-            this.buttonDeleteUser_GKU.Text = "Удалить читателя";
-            this.buttonDeleteUser_GKU.UseVisualStyleBackColor = true;
-            this.buttonDeleteUser_GKU.Visible = false;
-            // 
-            // buttonAddUser_GKU
-            // 
-            this.buttonAddUser_GKU.Location = new System.Drawing.Point(35, 126);
-            this.buttonAddUser_GKU.Name = "buttonAddUser_GKU";
-            this.buttonAddUser_GKU.Size = new System.Drawing.Size(122, 44);
-            this.buttonAddUser_GKU.TabIndex = 5;
-            this.buttonAddUser_GKU.Text = "Добавить читателя";
-            this.buttonAddUser_GKU.UseVisualStyleBackColor = true;
-            this.buttonAddUser_GKU.Visible = false;
             // 
             // openFileDialogTask_GKU
             // 
@@ -485,11 +487,11 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxIcons_GKU.ResumeLayout(false);
             this.panelButtons_GKU.ResumeLayout(false);
             this.groupBoxButtons_GKU.ResumeLayout(false);
+            this.groupBoxUsersButtons_GKU.ResumeLayout(false);
+            this.groupBoxBookButtons_GKU.ResumeLayout(false);
             this.panelData_GKU.ResumeLayout(false);
             this.groupBoxData_GKU.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_GKU)).EndInit();
-            this.groupBoxBookButtons_GKU.ResumeLayout(false);
-            this.groupBoxUsersButtons_GKU.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,7 +517,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.Splitter splitterData_GKU;
         private System.Windows.Forms.Panel panelData_GKU;
         private System.Windows.Forms.GroupBox groupBoxData_GKU;
-        private System.Windows.Forms.DataGridView dataGridViewMain_GKU;
+        public System.Windows.Forms.DataGridView dataGridViewMain_GKU;
         private System.Windows.Forms.GroupBox groupBoxInfo_GKU;
         private System.Windows.Forms.Button buttonSaveUserBase_GKU;
         private System.Windows.Forms.Button buttonOpenUserBase_GKU;
@@ -523,7 +525,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.Button buttonSaveBookBase_GKU;
         private System.Windows.Forms.Button buttonOpenBookBase_GKU;
         private System.Windows.Forms.ToolTip toolTipButton_GKU;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonUsersBase_GKU;
         private System.Windows.Forms.GroupBox groupBoxUsersButtons_GKU;
         private System.Windows.Forms.GroupBox groupBoxBookButtons_GKU;
         private System.Windows.Forms.Button buttonChangeUser_GKU;
@@ -532,7 +534,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.Button buttonAddUser_GKU;
         private System.Windows.Forms.Button buttonChangeBook_GKU;
         private System.Windows.Forms.Button buttonFindBook_GKU;
-        private System.Windows.Forms.Button buttonDeleteBook_GKU;
+        public System.Windows.Forms.Button buttonDeleteBook_GKU;
         private System.Windows.Forms.Button buttonAddBook_GKU;
         private System.Windows.Forms.Button buttonBooks_GKU;
         private System.Windows.Forms.OpenFileDialog openFileDialogTask_GKU;

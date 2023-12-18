@@ -51,7 +51,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             return arrayValues;
         }
 
-        private void buttonOpenBookBase_GKU_Click(object sender, EventArgs e)
+        public void buttonOpenBookBase_GKU_Click(object sender, EventArgs e)
         {
             openFileDialogTask_GKU.ShowDialog();
             openFilePath = openFileDialogTask_GKU.FileName;
@@ -67,7 +67,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonBooks_GKU.Enabled = true;
         }
 
-        private void buttonBooks_GKU_Click(object sender, EventArgs e)
+        public void buttonBooks_GKU_Click(object sender, EventArgs e)
         {
             dataGridViewMain_GKU.Columns[0].HeaderText = "Артикул";
             dataGridViewMain_GKU.Columns[1].HeaderText = "Название";
@@ -85,13 +85,12 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             dataGridViewMain_GKU.Columns[5].Width = 50;
             dataGridViewMain_GKU.Columns[6].Width = 300;
 
+
+            dataGridViewMain_GKU.Rows[0].ReadOnly = true;
+            dataGridViewMain_GKU.Columns[0].ReadOnly = true;
+
             string[,] arrayValues = new string[rows, columns];
             arrayValues = LoadFromFileData(openFilePath);
-            for (int i = 0; i < columns; i++)
-            {
-                //dataGridViewMain_GKU.Columns[i].Width = 200;
-                //dataGridViewMain_GKU.Columns[i].Width = 200;
-            }
 
             for (int r = 0; r < rows; r++)
             {
@@ -106,6 +105,41 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonChangeBook_GKU.Visible = true;
             buttonFindBook_GKU.Visible = true;
             buttonAddBook_GKU.Visible = true;
+        }
+
+        public void buttonDeleteBook_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dataGridViewMain_GKU.CurrentRow.Index >= 0)
+                {
+                    int a = dataGridViewMain_GKU.CurrentRow.Index;
+                    dataGridViewMain_GKU.Rows.Remove(dataGridViewMain_GKU.Rows[a]);
+                    if (dataGridViewMain_GKU.Rows.Count == 1)
+                    {
+                        dataGridViewMain_GKU.Rows.Clear();
+                    }
+                }
+                if(dataGridViewMain_GKU.Rows.Count == 1)
+                {
+                    buttonDeleteBook_GKU.Enabled = false;
+                }
+                if(dataGridViewMain_GKU.Rows.Count > 1)
+                {
+                    buttonDeleteBook_GKU.Enabled = true;
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void buttonAddBook_GKU_Click(object sender, EventArgs e)
+        {
+            FormAddBook formAddBook = new FormAddBook(this);
+            formAddBook.ShowDialog();
         }
     }
     
