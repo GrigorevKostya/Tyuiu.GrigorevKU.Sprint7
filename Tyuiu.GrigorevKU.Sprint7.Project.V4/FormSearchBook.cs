@@ -21,16 +21,24 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
 
         private void buttonAddNewBook_GKU_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < fmain.dataGridViewMain_GKU.RowCount; i++)
+            try
             {
-                fmain.dataGridViewMain_GKU.Rows[i].Selected = false;
-                for (int j = comboBoxIsBookNew_GKU.SelectedIndex; j < fmain.dataGridViewMain_GKU.ColumnCount; j++)
-                    if (fmain.dataGridViewMain_GKU.Rows[i].Cells[j].Value != null)
-                        if (fmain.dataGridViewMain_GKU.Rows[i].Cells[j].Value.ToString().Contains(textBoxBookSearch_GKU.Text))
-                        {
-                            fmain.dataGridViewMain_GKU.Rows[i].Selected = true;
-                            break;
-                        }
+                for (int i = 0; i < fmain.dataGridViewMain_GKU.RowCount; i++)
+                {
+                    fmain.dataGridViewMain_GKU.Rows[i].Selected = false;
+                    for (int j = comboBoxIsBookNew_GKU.SelectedIndex; j < fmain.dataGridViewMain_GKU.ColumnCount; j++)
+                        if (fmain.dataGridViewMain_GKU.Rows[i].Cells[j].Value != null)
+                            if (fmain.dataGridViewMain_GKU.Rows[i].Cells[j].Value.ToString().Contains(textBoxBookSearch_GKU.Text))
+                            {
+                                fmain.dataGridViewMain_GKU.Rows[i].Selected = true;
+                                break;
+                            }
+                }
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при поиске книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
