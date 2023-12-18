@@ -364,6 +364,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.buttonFindBook_GKU.Text = "Найти книгу";
             this.buttonFindBook_GKU.UseVisualStyleBackColor = true;
             this.buttonFindBook_GKU.Visible = false;
+            this.buttonFindBook_GKU.Click += new System.EventHandler(this.buttonFindBook_GKU_Click);
             // 
             // buttonDeleteBook_GKU
             // 
@@ -438,6 +439,10 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             // dataGridViewMain_GKU
             // 
+            this.dataGridViewMain_GKU.AllowUserToAddRows = false;
+            this.dataGridViewMain_GKU.AllowUserToDeleteRows = false;
+            this.dataGridViewMain_GKU.AllowUserToResizeColumns = false;
+            this.dataGridViewMain_GKU.AllowUserToResizeRows = false;
             this.dataGridViewMain_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -450,6 +455,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewMain_GKU.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewMain_GKU.Location = new System.Drawing.Point(3, 18);
             this.dataGridViewMain_GKU.Name = "dataGridViewMain_GKU";
+            this.dataGridViewMain_GKU.ReadOnly = true;
             this.dataGridViewMain_GKU.RowHeadersVisible = false;
             this.dataGridViewMain_GKU.RowHeadersWidth = 51;
             this.dataGridViewMain_GKU.RowTemplate.Height = 24;

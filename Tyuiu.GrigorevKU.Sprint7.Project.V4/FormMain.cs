@@ -122,7 +122,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                         dataGridViewMain_GKU.Rows.Clear();
                     }
                 }
-                if(dataGridViewMain_GKU.Rows.Count == 1)
+                if(dataGridViewMain_GKU.Rows.Count <= 1)
                 {
                     buttonDeleteBook_GKU.Enabled = false;
                     buttonChangeBook_GKU.Enabled = false;
@@ -166,6 +166,12 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             {
                 MessageBox.Show("Ошибка при редактировании книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonFindBook_GKU_Click(object sender, EventArgs e)
+        {
+            FormSearchBook formSearchBook = new FormSearchBook(this);
+            formSearchBook.ShowDialog();
         }
     }
 
