@@ -94,7 +94,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemInfo_GKU});
             this.menuStripMainMenu_GKU.Location = new System.Drawing.Point(0, 0);
             this.menuStripMainMenu_GKU.Name = "menuStripMainMenu_GKU";
-            this.menuStripMainMenu_GKU.Size = new System.Drawing.Size(1416, 28);
+            this.menuStripMainMenu_GKU.Size = new System.Drawing.Size(1416, 30);
             this.menuStripMainMenu_GKU.TabIndex = 0;
             // 
             // ToolStripMenuItemFile_GKU
@@ -103,7 +103,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.toolStripMenuItemOpen_GKU,
             this.ToolStripMenuItemSave_GKU});
             this.ToolStripMenuItemFile_GKU.Name = "ToolStripMenuItemFile_GKU";
-            this.ToolStripMenuItemFile_GKU.Size = new System.Drawing.Size(59, 24);
+            this.ToolStripMenuItemFile_GKU.Size = new System.Drawing.Size(59, 26);
             this.ToolStripMenuItemFile_GKU.Text = "Файл";
             // 
             // toolStripMenuItemOpen_GKU
@@ -125,7 +125,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemEditUsers_GKU,
             this.ToolStripMenuItemEditDebtors_GKU});
             this.ToolStripMenuItemEdit_GKU.Name = "ToolStripMenuItemEdit_GKU";
-            this.ToolStripMenuItemEdit_GKU.Size = new System.Drawing.Size(74, 24);
+            this.ToolStripMenuItemEdit_GKU.Size = new System.Drawing.Size(74, 26);
             this.ToolStripMenuItemEdit_GKU.Text = "Правка";
             // 
             // ToolStripMenuItemEditBooks_GKU
@@ -155,7 +155,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemAbout_GKU,
             this.ToolStripMenuItemInstruction_GKU});
             this.ToolStripMenuItemInfo_GKU.Name = "ToolStripMenuItemInfo_GKU";
-            this.ToolStripMenuItemInfo_GKU.Size = new System.Drawing.Size(81, 24);
+            this.ToolStripMenuItemInfo_GKU.Size = new System.Drawing.Size(81, 26);
             this.ToolStripMenuItemInfo_GKU.Text = "Справка";
             // 
             // ToolStripMenuItemAbout_GKU
@@ -174,7 +174,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             this.panelIcons_GKU.Controls.Add(this.groupBoxIcons_GKU);
             this.panelIcons_GKU.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelIcons_GKU.Location = new System.Drawing.Point(0, 28);
+            this.panelIcons_GKU.Location = new System.Drawing.Point(0, 30);
             this.panelIcons_GKU.Name = "panelIcons_GKU";
             this.panelIcons_GKU.Size = new System.Drawing.Size(1416, 68);
             this.panelIcons_GKU.TabIndex = 1;
@@ -248,9 +248,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             this.panelButtons_GKU.Controls.Add(this.groupBoxButtons_GKU);
             this.panelButtons_GKU.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelButtons_GKU.Location = new System.Drawing.Point(0, 96);
+            this.panelButtons_GKU.Location = new System.Drawing.Point(0, 98);
             this.panelButtons_GKU.Name = "panelButtons_GKU";
-            this.panelButtons_GKU.Size = new System.Drawing.Size(321, 556);
+            this.panelButtons_GKU.Size = new System.Drawing.Size(321, 554);
             this.panelButtons_GKU.TabIndex = 2;
             // 
             // groupBoxButtons_GKU
@@ -260,7 +260,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxButtons_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxButtons_GKU.Location = new System.Drawing.Point(0, 0);
             this.groupBoxButtons_GKU.Name = "groupBoxButtons_GKU";
-            this.groupBoxButtons_GKU.Size = new System.Drawing.Size(321, 556);
+            this.groupBoxButtons_GKU.Size = new System.Drawing.Size(321, 554);
             this.groupBoxButtons_GKU.TabIndex = 0;
             this.groupBoxButtons_GKU.TabStop = false;
             // 
@@ -274,7 +274,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxUsersButtons_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxUsersButtons_GKU.Location = new System.Drawing.Point(3, 283);
             this.groupBoxUsersButtons_GKU.Name = "groupBoxUsersButtons_GKU";
-            this.groupBoxUsersButtons_GKU.Size = new System.Drawing.Size(315, 270);
+            this.groupBoxUsersButtons_GKU.Size = new System.Drawing.Size(315, 268);
             this.groupBoxUsersButtons_GKU.TabIndex = 2;
             this.groupBoxUsersButtons_GKU.TabStop = false;
             this.groupBoxUsersButtons_GKU.Text = "Работа с базой читателей";
@@ -353,6 +353,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.buttonChangeBook_GKU.Text = "Изменить книгу";
             this.buttonChangeBook_GKU.UseVisualStyleBackColor = true;
             this.buttonChangeBook_GKU.Visible = false;
+            this.buttonChangeBook_GKU.Click += new System.EventHandler(this.buttonChangeBook_GKU_Click);
             // 
             // buttonFindBook_GKU
             // 
@@ -399,9 +400,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             // splitterData_GKU
             // 
-            this.splitterData_GKU.Location = new System.Drawing.Point(321, 96);
+            this.splitterData_GKU.Location = new System.Drawing.Point(321, 98);
             this.splitterData_GKU.Name = "splitterData_GKU";
-            this.splitterData_GKU.Size = new System.Drawing.Size(10, 556);
+            this.splitterData_GKU.Size = new System.Drawing.Size(10, 554);
             this.splitterData_GKU.TabIndex = 3;
             this.splitterData_GKU.TabStop = false;
             // 
@@ -409,9 +410,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             this.panelData_GKU.Controls.Add(this.groupBoxData_GKU);
             this.panelData_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelData_GKU.Location = new System.Drawing.Point(331, 96);
+            this.panelData_GKU.Location = new System.Drawing.Point(331, 98);
             this.panelData_GKU.Name = "panelData_GKU";
-            this.panelData_GKU.Size = new System.Drawing.Size(1085, 556);
+            this.panelData_GKU.Size = new System.Drawing.Size(1085, 554);
             this.panelData_GKU.TabIndex = 4;
             // 
             // groupBoxData_GKU
@@ -421,7 +422,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxData_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxData_GKU.Location = new System.Drawing.Point(0, 0);
             this.groupBoxData_GKU.Name = "groupBoxData_GKU";
-            this.groupBoxData_GKU.Size = new System.Drawing.Size(1085, 556);
+            this.groupBoxData_GKU.Size = new System.Drawing.Size(1085, 554);
             this.groupBoxData_GKU.TabIndex = 0;
             this.groupBoxData_GKU.TabStop = false;
             // 
@@ -430,7 +431,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxInfo_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxInfo_GKU.Location = new System.Drawing.Point(3, 344);
             this.groupBoxInfo_GKU.Name = "groupBoxInfo_GKU";
-            this.groupBoxInfo_GKU.Size = new System.Drawing.Size(1079, 209);
+            this.groupBoxInfo_GKU.Size = new System.Drawing.Size(1079, 207);
             this.groupBoxInfo_GKU.TabIndex = 1;
             this.groupBoxInfo_GKU.TabStop = false;
             this.groupBoxInfo_GKU.Text = "Дополнительная информация";

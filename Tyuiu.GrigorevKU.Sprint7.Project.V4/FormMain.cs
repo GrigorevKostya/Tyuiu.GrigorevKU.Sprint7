@@ -60,15 +60,17 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
 
             arrayValues = LoadFromFileData(openFilePath);
 
-            dataGridViewMain_GKU.ColumnCount = columns;
-            dataGridViewMain_GKU.RowCount = rows;
-
             arrayValues = ds.GetBase(openFilePath);
             buttonBooks_GKU.Enabled = true;
+            buttonDeleteBook_GKU.Enabled = true;
+            buttonChangeBook_GKU.Enabled = true;
         }
 
         public void buttonBooks_GKU_Click(object sender, EventArgs e)
         {
+            dataGridViewMain_GKU.ColumnCount = columns;
+            dataGridViewMain_GKU.RowCount = rows;
+
             dataGridViewMain_GKU.Columns[0].HeaderText = "Артикул";
             dataGridViewMain_GKU.Columns[1].HeaderText = "Название";
             dataGridViewMain_GKU.Columns[2].HeaderText = "Автор";
@@ -123,11 +125,13 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                 if(dataGridViewMain_GKU.Rows.Count == 1)
                 {
                     buttonDeleteBook_GKU.Enabled = false;
+                    buttonChangeBook_GKU.Enabled = false;
                 }
                 if(dataGridViewMain_GKU.Rows.Count > 1)
                 {
                     buttonDeleteBook_GKU.Enabled = true;
                 }
+                buttonBooks_GKU.Enabled = false;
 
             }
             catch
@@ -140,7 +144,30 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             FormAddBook formAddBook = new FormAddBook(this);
             formAddBook.ShowDialog();
+            buttonBooks_GKU.Enabled = false;
+        }
+
+        private void buttonChangeBook_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = dataGridViewMain_GKU.CurrentRow.Index;
+                FormEditBook fed = new FormEditBook(this);
+                fed.textBoxBookArticle_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[0].Value.ToString();
+                fed.textBoxBookName_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[1].Value.ToString();
+                fed.textBoxBookAuthor_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[2].Value.ToString();
+                fed.textBoxBookYear_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[3].Value.ToString();
+                fed.textBoxBookGenre_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[4].Value.ToString();
+                fed.comboBoxIsBookNew_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[5].Value.ToString();
+                fed.textBoxBookAnnotation_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[6].Value.ToString();
+                fed.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при редактировании книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
+
     
 }
