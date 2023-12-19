@@ -31,15 +31,20 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStripMainMenu_GKU = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemOpenFile_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpenBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemFile_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemOpenUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSaveUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemEdit_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemEditBooks_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemAddBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemEditBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemFindBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemDeleteBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemEditUsers_GKU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemEditDebtors_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemInfo_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAbout_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemInstruction_GKU = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,16 +73,21 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.panelData_GKU = new System.Windows.Forms.Panel();
             this.groupBoxData_GKU = new System.Windows.Forms.GroupBox();
             this.groupBoxInfo_GKU = new System.Windows.Forms.GroupBox();
+            this.labelUnreturnedBookss_GKU = new System.Windows.Forms.Label();
             this.dataGridViewMain_GKU = new System.Windows.Forms.DataGridView();
             this.toolTipButton_GKU = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogTask_GKU = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogTask_GKU = new System.Windows.Forms.SaveFileDialog();
-            this.ToolStripMenuItemOpenUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemSaveUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemAddBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemEditBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemFindBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemDeleteBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelUnreturned_GKU = new System.Windows.Forms.Panel();
+            this.groupBoxUnreturnedBooks_GKU = new System.Windows.Forms.GroupBox();
+            this.dataGridViewUnreturnedBooks_GKU = new System.Windows.Forms.DataGridView();
+            this.buttonUnreturnedBook_GKU = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToolStripMenuItemAddUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemEditUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemFindUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemDeleteUser_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainMenu_GKU.SuspendLayout();
             this.panelIcons_GKU.SuspendLayout();
             this.groupBoxIcons_GKU.SuspendLayout();
@@ -87,7 +97,11 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxBookButtons_GKU.SuspendLayout();
             this.panelData_GKU.SuspendLayout();
             this.groupBoxData_GKU.SuspendLayout();
+            this.groupBoxInfo_GKU.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_GKU)).BeginInit();
+            this.panelUnreturned_GKU.SuspendLayout();
+            this.groupBoxUnreturnedBooks_GKU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnreturnedBooks_GKU)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripMainMenu_GKU
@@ -128,12 +142,24 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemFile_GKU.Text = "Сохранить базу данных с книгами";
             this.ToolStripMenuItemFile_GKU.Click += new System.EventHandler(this.ToolStripMenuItemFile_GKU_Click);
             // 
+            // ToolStripMenuItemOpenUser_GKU
+            // 
+            this.ToolStripMenuItemOpenUser_GKU.Name = "ToolStripMenuItemOpenUser_GKU";
+            this.ToolStripMenuItemOpenUser_GKU.Size = new System.Drawing.Size(353, 26);
+            this.ToolStripMenuItemOpenUser_GKU.Text = "Открыть базу данных с читателями";
+            this.ToolStripMenuItemOpenUser_GKU.Click += new System.EventHandler(this.ToolStripMenuItemOpenUser_GKU_Click);
+            // 
+            // ToolStripMenuItemSaveUser_GKU
+            // 
+            this.ToolStripMenuItemSaveUser_GKU.Name = "ToolStripMenuItemSaveUser_GKU";
+            this.ToolStripMenuItemSaveUser_GKU.Size = new System.Drawing.Size(353, 26);
+            this.ToolStripMenuItemSaveUser_GKU.Text = "Сохранить базу данных с читателями";
+            // 
             // ToolStripMenuItemEdit_GKU
             // 
             this.ToolStripMenuItemEdit_GKU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemEditBooks_GKU,
-            this.ToolStripMenuItemEditUsers_GKU,
-            this.ToolStripMenuItemEditDebtors_GKU});
+            this.ToolStripMenuItemEditUsers_GKU});
             this.ToolStripMenuItemEdit_GKU.Name = "ToolStripMenuItemEdit_GKU";
             this.ToolStripMenuItemEdit_GKU.Size = new System.Drawing.Size(74, 24);
             this.ToolStripMenuItemEdit_GKU.Text = "Правка";
@@ -147,22 +173,48 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemDeleteBook_GKU});
             this.ToolStripMenuItemEditBooks_GKU.Enabled = false;
             this.ToolStripMenuItemEditBooks_GKU.Name = "ToolStripMenuItemEditBooks_GKU";
-            this.ToolStripMenuItemEditBooks_GKU.Size = new System.Drawing.Size(225, 26);
+            this.ToolStripMenuItemEditBooks_GKU.Size = new System.Drawing.Size(224, 26);
             this.ToolStripMenuItemEditBooks_GKU.Text = "Правка книг";
+            // 
+            // ToolStripMenuItemAddBook_GKU
+            // 
+            this.ToolStripMenuItemAddBook_GKU.Name = "ToolStripMenuItemAddBook_GKU";
+            this.ToolStripMenuItemAddBook_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemAddBook_GKU.Text = "Добавить книгу";
+            this.ToolStripMenuItemAddBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemAddBook_GKU_Click);
+            // 
+            // ToolStripMenuItemEditBook_GKU
+            // 
+            this.ToolStripMenuItemEditBook_GKU.Name = "ToolStripMenuItemEditBook_GKU";
+            this.ToolStripMenuItemEditBook_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemEditBook_GKU.Text = "Изменить книгу";
+            this.ToolStripMenuItemEditBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemEditBook_GKU_Click);
+            // 
+            // ToolStripMenuItemFindBook_GKU
+            // 
+            this.ToolStripMenuItemFindBook_GKU.Name = "ToolStripMenuItemFindBook_GKU";
+            this.ToolStripMenuItemFindBook_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemFindBook_GKU.Text = "Найти книгу";
+            this.ToolStripMenuItemFindBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemFindBook_GKU_Click);
+            // 
+            // ToolStripMenuItemDeleteBook_GKU
+            // 
+            this.ToolStripMenuItemDeleteBook_GKU.Name = "ToolStripMenuItemDeleteBook_GKU";
+            this.ToolStripMenuItemDeleteBook_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemDeleteBook_GKU.Text = "Удалить книгу";
+            this.ToolStripMenuItemDeleteBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemDeleteBook_GKU_Click);
             // 
             // ToolStripMenuItemEditUsers_GKU
             // 
+            this.ToolStripMenuItemEditUsers_GKU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemAddUser_GKU,
+            this.ToolStripMenuItemEditUser_GKU,
+            this.ToolStripMenuItemFindUser_GKU,
+            this.ToolStripMenuItemDeleteUser_GKU});
             this.ToolStripMenuItemEditUsers_GKU.Enabled = false;
             this.ToolStripMenuItemEditUsers_GKU.Name = "ToolStripMenuItemEditUsers_GKU";
-            this.ToolStripMenuItemEditUsers_GKU.Size = new System.Drawing.Size(225, 26);
+            this.ToolStripMenuItemEditUsers_GKU.Size = new System.Drawing.Size(224, 26);
             this.ToolStripMenuItemEditUsers_GKU.Text = "Правка читателей";
-            // 
-            // ToolStripMenuItemEditDebtors_GKU
-            // 
-            this.ToolStripMenuItemEditDebtors_GKU.Enabled = false;
-            this.ToolStripMenuItemEditDebtors_GKU.Name = "ToolStripMenuItemEditDebtors_GKU";
-            this.ToolStripMenuItemEditDebtors_GKU.Size = new System.Drawing.Size(225, 26);
-            this.ToolStripMenuItemEditDebtors_GKU.Text = "Правка должников";
             // 
             // ToolStripMenuItemInfo_GKU
             // 
@@ -176,13 +228,13 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // ToolStripMenuItemAbout_GKU
             // 
             this.ToolStripMenuItemAbout_GKU.Name = "ToolStripMenuItemAbout_GKU";
-            this.ToolStripMenuItemAbout_GKU.Size = new System.Drawing.Size(187, 26);
+            this.ToolStripMenuItemAbout_GKU.Size = new System.Drawing.Size(224, 26);
             this.ToolStripMenuItemAbout_GKU.Text = "О программе";
             // 
             // ToolStripMenuItemInstruction_GKU
             // 
             this.ToolStripMenuItemInstruction_GKU.Name = "ToolStripMenuItemInstruction_GKU";
-            this.ToolStripMenuItemInstruction_GKU.Size = new System.Drawing.Size(187, 26);
+            this.ToolStripMenuItemInstruction_GKU.Size = new System.Drawing.Size(224, 26);
             this.ToolStripMenuItemInstruction_GKU.Text = "Руководство ";
             // 
             // panelIcons_GKU
@@ -307,6 +359,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.buttonChangeUser_GKU.Text = "Изменить данные читателя";
             this.buttonChangeUser_GKU.UseVisualStyleBackColor = true;
             this.buttonChangeUser_GKU.Visible = false;
+            this.buttonChangeUser_GKU.Click += new System.EventHandler(this.buttonChangeUser_GKU_Click);
             // 
             // buttonUsersBase_GKU
             // 
@@ -328,6 +381,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.buttonFindUser_GKU.Text = "Найти читателя";
             this.buttonFindUser_GKU.UseVisualStyleBackColor = true;
             this.buttonFindUser_GKU.Visible = false;
+            this.buttonFindUser_GKU.Click += new System.EventHandler(this.buttonFindUser_GKU_Click);
             // 
             // buttonDeleteUser_GKU
             // 
@@ -338,6 +392,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.buttonDeleteUser_GKU.Text = "Удалить читателя";
             this.buttonDeleteUser_GKU.UseVisualStyleBackColor = true;
             this.buttonDeleteUser_GKU.Visible = false;
+            this.buttonDeleteUser_GKU.Click += new System.EventHandler(this.buttonDeleteUser_GKU_Click);
             // 
             // buttonAddUser_GKU
             // 
@@ -450,6 +505,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             // groupBoxInfo_GKU
             // 
+            this.groupBoxInfo_GKU.Controls.Add(this.buttonUnreturnedBook_GKU);
+            this.groupBoxInfo_GKU.Controls.Add(this.panelUnreturned_GKU);
             this.groupBoxInfo_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxInfo_GKU.Location = new System.Drawing.Point(3, 344);
             this.groupBoxInfo_GKU.Name = "groupBoxInfo_GKU";
@@ -458,6 +515,17 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxInfo_GKU.TabStop = false;
             this.groupBoxInfo_GKU.Text = "Дополнительная информация";
             // 
+            // labelUnreturnedBookss_GKU
+            // 
+            this.labelUnreturnedBookss_GKU.AutoSize = true;
+            this.labelUnreturnedBookss_GKU.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelUnreturnedBookss_GKU.Location = new System.Drawing.Point(3, 18);
+            this.labelUnreturnedBookss_GKU.Name = "labelUnreturnedBookss_GKU";
+            this.labelUnreturnedBookss_GKU.Size = new System.Drawing.Size(164, 17);
+            this.labelUnreturnedBookss_GKU.TabIndex = 1;
+            this.labelUnreturnedBookss_GKU.Text = "Невозвращенные книги";
+            this.labelUnreturnedBookss_GKU.Click += new System.EventHandler(this.labelUnreturnedBookss_GKU_Click);
+            // 
             // dataGridViewMain_GKU
             // 
             this.dataGridViewMain_GKU.AllowUserToAddRows = false;
@@ -465,14 +533,14 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewMain_GKU.AllowUserToResizeColumns = false;
             this.dataGridViewMain_GKU.AllowUserToResizeRows = false;
             this.dataGridViewMain_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewMain_GKU.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewMain_GKU.Location = new System.Drawing.Point(3, 18);
             this.dataGridViewMain_GKU.Name = "dataGridViewMain_GKU";
@@ -494,45 +562,98 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             this.openFileDialogTask_GKU.FileName = "openFileDialog1";
             // 
-            // ToolStripMenuItemOpenUser_GKU
+            // panelUnreturned_GKU
             // 
-            this.ToolStripMenuItemOpenUser_GKU.Name = "ToolStripMenuItemOpenUser_GKU";
-            this.ToolStripMenuItemOpenUser_GKU.Size = new System.Drawing.Size(353, 26);
-            this.ToolStripMenuItemOpenUser_GKU.Text = "Открыть базу данных с читателями";
+            this.panelUnreturned_GKU.Controls.Add(this.groupBoxUnreturnedBooks_GKU);
+            this.panelUnreturned_GKU.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelUnreturned_GKU.Location = new System.Drawing.Point(3, 18);
+            this.panelUnreturned_GKU.Name = "panelUnreturned_GKU";
+            this.panelUnreturned_GKU.Size = new System.Drawing.Size(409, 188);
+            this.panelUnreturned_GKU.TabIndex = 2;
+            this.panelUnreturned_GKU.Visible = false;
             // 
-            // ToolStripMenuItemSaveUser_GKU
+            // groupBoxUnreturnedBooks_GKU
             // 
-            this.ToolStripMenuItemSaveUser_GKU.Name = "ToolStripMenuItemSaveUser_GKU";
-            this.ToolStripMenuItemSaveUser_GKU.Size = new System.Drawing.Size(353, 26);
-            this.ToolStripMenuItemSaveUser_GKU.Text = "Сохранить базу данных с читателями";
+            this.groupBoxUnreturnedBooks_GKU.Controls.Add(this.dataGridViewUnreturnedBooks_GKU);
+            this.groupBoxUnreturnedBooks_GKU.Controls.Add(this.labelUnreturnedBookss_GKU);
+            this.groupBoxUnreturnedBooks_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxUnreturnedBooks_GKU.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxUnreturnedBooks_GKU.Name = "groupBoxUnreturnedBooks_GKU";
+            this.groupBoxUnreturnedBooks_GKU.Size = new System.Drawing.Size(409, 188);
+            this.groupBoxUnreturnedBooks_GKU.TabIndex = 0;
+            this.groupBoxUnreturnedBooks_GKU.TabStop = false;
             // 
-            // ToolStripMenuItemAddBook_GKU
+            // dataGridViewUnreturnedBooks_GKU
             // 
-            this.ToolStripMenuItemAddBook_GKU.Name = "ToolStripMenuItemAddBook_GKU";
-            this.ToolStripMenuItemAddBook_GKU.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuItemAddBook_GKU.Text = "Добавить книгу";
-            this.ToolStripMenuItemAddBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemAddBook_GKU_Click);
+            this.dataGridViewUnreturnedBooks_GKU.AllowUserToDeleteRows = false;
+            this.dataGridViewUnreturnedBooks_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUnreturnedBooks_GKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dataGridViewUnreturnedBooks_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewUnreturnedBooks_GKU.Location = new System.Drawing.Point(3, 35);
+            this.dataGridViewUnreturnedBooks_GKU.Name = "dataGridViewUnreturnedBooks_GKU";
+            this.dataGridViewUnreturnedBooks_GKU.ReadOnly = true;
+            this.dataGridViewUnreturnedBooks_GKU.RowHeadersVisible = false;
+            this.dataGridViewUnreturnedBooks_GKU.RowHeadersWidth = 51;
+            this.dataGridViewUnreturnedBooks_GKU.RowTemplate.Height = 24;
+            this.dataGridViewUnreturnedBooks_GKU.Size = new System.Drawing.Size(403, 150);
+            this.dataGridViewUnreturnedBooks_GKU.TabIndex = 2;
             // 
-            // ToolStripMenuItemEditBook_GKU
+            // buttonUnreturnedBook_GKU
             // 
-            this.ToolStripMenuItemEditBook_GKU.Name = "ToolStripMenuItemEditBook_GKU";
-            this.ToolStripMenuItemEditBook_GKU.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuItemEditBook_GKU.Text = "Изменить книгу";
-            this.ToolStripMenuItemEditBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemEditBook_GKU_Click);
+            this.buttonUnreturnedBook_GKU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonUnreturnedBook_GKU.Location = new System.Drawing.Point(418, 154);
+            this.buttonUnreturnedBook_GKU.Name = "buttonUnreturnedBook_GKU";
+            this.buttonUnreturnedBook_GKU.Size = new System.Drawing.Size(125, 49);
+            this.buttonUnreturnedBook_GKU.TabIndex = 3;
+            this.buttonUnreturnedBook_GKU.Text = "Вывести";
+            this.buttonUnreturnedBook_GKU.UseVisualStyleBackColor = true;
+            this.buttonUnreturnedBook_GKU.Visible = false;
+            this.buttonUnreturnedBook_GKU.Click += new System.EventHandler(this.buttonUnreturnedBook_GKU_Click);
             // 
-            // ToolStripMenuItemFindBook_GKU
+            // Column1
             // 
-            this.ToolStripMenuItemFindBook_GKU.Name = "ToolStripMenuItemFindBook_GKU";
-            this.ToolStripMenuItemFindBook_GKU.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuItemFindBook_GKU.Text = "Найти книгу";
-            this.ToolStripMenuItemFindBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemFindBook_GKU_Click);
+            this.Column1.HeaderText = "ФИО читателя";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
             // 
-            // ToolStripMenuItemDeleteBook_GKU
+            // Column2
             // 
-            this.ToolStripMenuItemDeleteBook_GKU.Name = "ToolStripMenuItemDeleteBook_GKU";
-            this.ToolStripMenuItemDeleteBook_GKU.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuItemDeleteBook_GKU.Text = "Удалить книгу";
-            this.ToolStripMenuItemDeleteBook_GKU.Click += new System.EventHandler(this.ToolStripMenuItemDeleteBook_GKU_Click);
+            this.Column2.HeaderText = "Артикул книги";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // ToolStripMenuItemAddUser_GKU
+            // 
+            this.ToolStripMenuItemAddUser_GKU.Name = "ToolStripMenuItemAddUser_GKU";
+            this.ToolStripMenuItemAddUser_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemAddUser_GKU.Text = "Добавить читателя";
+            this.ToolStripMenuItemAddUser_GKU.Click += new System.EventHandler(this.ToolStripMenuItemAddUser_GKU_Click);
+            // 
+            // ToolStripMenuItemEditUser_GKU
+            // 
+            this.ToolStripMenuItemEditUser_GKU.Name = "ToolStripMenuItemEditUser_GKU";
+            this.ToolStripMenuItemEditUser_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemEditUser_GKU.Text = "Изменить данные";
+            this.ToolStripMenuItemEditUser_GKU.Click += new System.EventHandler(this.ToolStripMenuItemEditUser_GKU_Click);
+            // 
+            // ToolStripMenuItemFindUser_GKU
+            // 
+            this.ToolStripMenuItemFindUser_GKU.Name = "ToolStripMenuItemFindUser_GKU";
+            this.ToolStripMenuItemFindUser_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemFindUser_GKU.Text = "Найти читателя";
+            this.ToolStripMenuItemFindUser_GKU.Click += new System.EventHandler(this.ToolStripMenuItemFindUser_GKU_Click);
+            // 
+            // ToolStripMenuItemDeleteUser_GKU
+            // 
+            this.ToolStripMenuItemDeleteUser_GKU.Name = "ToolStripMenuItemDeleteUser_GKU";
+            this.ToolStripMenuItemDeleteUser_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemDeleteUser_GKU.Text = "Удалить читателя";
+            this.ToolStripMenuItemDeleteUser_GKU.Click += new System.EventHandler(this.ToolStripMenuItemDeleteUser_GKU_Click);
             // 
             // FormMain
             // 
@@ -559,7 +680,12 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxBookButtons_GKU.ResumeLayout(false);
             this.panelData_GKU.ResumeLayout(false);
             this.groupBoxData_GKU.ResumeLayout(false);
+            this.groupBoxInfo_GKU.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_GKU)).EndInit();
+            this.panelUnreturned_GKU.ResumeLayout(false);
+            this.groupBoxUnreturnedBooks_GKU.ResumeLayout(false);
+            this.groupBoxUnreturnedBooks_GKU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnreturnedBooks_GKU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,7 +700,6 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEdit_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditBooks_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditUsers_GKU;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditDebtors_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemInfo_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAbout_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemInstruction_GKU;
@@ -613,6 +738,18 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditBook_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFindBook_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemDeleteBook_GKU;
+        private System.Windows.Forms.Button buttonUnreturnedBooks_GKU;
+        private System.Windows.Forms.Label labelUnreturnedBookss_GKU;
+        private System.Windows.Forms.Panel panelUnreturned_GKU;
+        private System.Windows.Forms.GroupBox groupBoxUnreturnedBooks_GKU;
+        private System.Windows.Forms.DataGridView dataGridViewUnreturnedBooks_GKU;
+        private System.Windows.Forms.Button buttonUnreturnedBook_GKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAddUser_GKU;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditUser_GKU;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFindUser_GKU;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemDeleteUser_GKU;
     }
 }
 

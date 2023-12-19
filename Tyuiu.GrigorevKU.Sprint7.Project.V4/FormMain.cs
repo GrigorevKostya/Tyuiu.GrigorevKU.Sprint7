@@ -64,6 +64,14 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonBooks_GKU.Enabled = true;
             buttonDeleteBook_GKU.Enabled = true;
             buttonChangeBook_GKU.Enabled = true;
+            buttonUsersBase_GKU.Enabled = false;
+            buttonAddUser_GKU.Visible = false;
+            buttonChangeUser_GKU.Visible = false;
+            buttonDeleteUser_GKU.Visible = false;
+            buttonFindUser_GKU.Visible = false;
+            panelUnreturned_GKU.Visible = false;
+            buttonUnreturnedBook_GKU.Visible = false;
+            buttonSaveUserBase_GKU.Enabled = false;
         }
 
         public void buttonBooks_GKU_Click(object sender, EventArgs e)
@@ -109,6 +117,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonAddBook_GKU.Visible = true;
             ToolStripMenuItemEditBooks_GKU.Enabled = true;
             buttonSaveBookBase_GKU.Enabled = true;
+
         }
 
         public void buttonDeleteBook_GKU_Click(object sender, EventArgs e)
@@ -191,6 +200,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonDeleteBook_GKU.Enabled = true;
             buttonChangeBook_GKU.Enabled = true;
             buttonSaveBookBase_GKU.Enabled = true;
+            panelUnreturned_GKU.Visible = false;
+            buttonUnreturnedBook_GKU.Visible = false;
+            buttonSaveUserBase_GKU.Enabled = false;
         }
 
         private void ToolStripMenuItemAddBook_GKU_Click(object sender, EventArgs e)
@@ -351,6 +363,12 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonUsersBase_GKU.Enabled = true;
             buttonDeleteUser_GKU.Enabled = true;
             buttonChangeUser_GKU.Enabled = true;
+            buttonBooks_GKU.Enabled = false;
+            buttonAddBook_GKU.Visible = false;
+            buttonChangeBook_GKU.Visible = false;
+            buttonDeleteBook_GKU.Visible = false;
+            buttonFindBook_GKU.Visible = false;
+            buttonSaveBookBase_GKU.Enabled = false;
         }
 
         private void buttonUsersBase_GKU_Click(object sender, EventArgs e)
@@ -396,6 +414,10 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonAddUser_GKU.Visible = true;
             ToolStripMenuItemEditUsers_GKU.Enabled = true;
             buttonSaveUserBase_GKU.Enabled = true;
+            panelUnreturned_GKU.Visible = true;
+            buttonUnreturnedBook_GKU.Visible = true;
+            ToolStripMenuItemEditUsers_GKU.Enabled = true;
+
         }
 
         private void buttonAddUser_GKU_Click(object sender, EventArgs e)
@@ -403,6 +425,192 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             FormAddUser formAddUser = new FormAddUser(this);
             formAddUser.ShowDialog();
             buttonUsersBase_GKU.Enabled = false;
+        }
+
+        private void buttonDeleteUser_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewMain_GKU.CurrentRow.Index >= 0)
+                {
+                    int a = dataGridViewMain_GKU.CurrentRow.Index;
+                    dataGridViewMain_GKU.Rows.Remove(dataGridViewMain_GKU.Rows[a]);
+                    if (dataGridViewMain_GKU.Rows.Count == 1)
+                    {
+                        dataGridViewMain_GKU.Rows.Clear();
+                    }
+                }
+                if (dataGridViewMain_GKU.Rows.Count <= 1)
+                {
+                    buttonDeleteUser_GKU.Enabled = false;
+                    buttonChangeUser_GKU.Enabled = false;
+                    buttonFindUser_GKU.Enabled = false;
+                }
+                if (dataGridViewMain_GKU.Rows.Count > 1)
+                {
+                    buttonDeleteUser_GKU.Enabled = true;
+                }
+                buttonUsersBase_GKU.Enabled = false;
+
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении читателя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonFindUser_GKU_Click(object sender, EventArgs e)
+        {
+            FormSearchUser formSearchUser = new FormSearchUser(this);
+            formSearchUser.ShowDialog();
+        }
+
+        private void buttonChangeUser_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = dataGridViewMain_GKU.CurrentRow.Index;
+                FormEditUser fed = new FormEditUser(this);
+                fed.textBoxUserID_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[0].Value.ToString();
+                fed.textBoxUserName_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[1].Value.ToString();
+                fed.textBoxUserAddress_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[2].Value.ToString();
+                fed.textBoxUserPhone_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[3].Value.ToString();
+                fed.textBoxUserBookArticle_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[4].Value.ToString();
+                fed.textBoxUserGetBookDate_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[5].Value.ToString();
+                fed.textBoxBookUserReturnBookDate_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[6].Value.ToString();
+                fed.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при измении данных читателя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void labelUnreturnedBookss_GKU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUnreturnedBook_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewUnreturnedBooks_GKU.Columns[0].Width = 200;
+                dataGridViewUnreturnedBooks_GKU.Columns[1].Width = 100;
+                dataGridViewUnreturnedBooks_GKU.ColumnCount = 2;
+                dataGridViewUnreturnedBooks_GKU.RowCount = dataGridViewMain_GKU.RowCount;
+                for (int i = 0; i < dataGridViewMain_GKU.RowCount; i++)
+                {
+                    if((dataGridViewMain_GKU.Rows[i].Cells[5].Value != null) && (dataGridViewMain_GKU.Rows[i].Cells[6].Value == ""))
+                    {
+                        string column1Value = dataGridViewMain_GKU.Rows[i].Cells[1].Value.ToString(); 
+                        string column2Value = dataGridViewMain_GKU.Rows[i].Cells[4].Value.ToString();
+                        dataGridViewUnreturnedBooks_GKU.Rows.Add(column1Value, column2Value);
+                    }
+                }
+
+                for (int i = 0; i < dataGridViewUnreturnedBooks_GKU.RowCount - 1; i++)
+                {
+
+                    if ((dataGridViewUnreturnedBooks_GKU.Rows[i].Cells[0].Value == null) && (dataGridViewUnreturnedBooks_GKU.Rows[i].Cells[1].Value == null))
+                    {
+                        dataGridViewUnreturnedBooks_GKU.Rows.RemoveAt(i);
+                        i--;
+                    }
+                }
+
+            }
+            catch
+            {
+               MessageBox.Show("Ошибка при редактировании книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ToolStripMenuItemOpenUser_GKU_Click(object sender, EventArgs e)
+        {
+            openFileDialogTask_GKU.ShowDialog();
+            openFilePath = openFileDialogTask_GKU.FileName;
+
+            string[,] arrayValues = new string[rows, columns];
+
+            arrayValues = LoadFromFileData(openFilePath);
+
+            arrayValues = ds.GetBase(openFilePath);
+            buttonUsersBase_GKU.Enabled = true;
+            buttonDeleteUser_GKU.Enabled = true;
+            buttonChangeUser_GKU.Enabled = true;
+            buttonBooks_GKU.Enabled = false;
+            buttonAddBook_GKU.Visible = false;
+            buttonChangeBook_GKU.Visible = false;
+            buttonDeleteBook_GKU.Visible = false;
+            buttonFindBook_GKU.Visible = false;
+            buttonSaveBookBase_GKU.Enabled = false;
+        }
+
+        private void ToolStripMenuItemAddUser_GKU_Click(object sender, EventArgs e)
+        {
+            FormAddUser formAddUser = new FormAddUser(this);
+            formAddUser.ShowDialog();
+            buttonUsersBase_GKU.Enabled = false;
+        }
+
+        private void ToolStripMenuItemEditUser_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = dataGridViewMain_GKU.CurrentRow.Index;
+                FormEditUser fed = new FormEditUser(this);
+                fed.textBoxUserID_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[0].Value.ToString();
+                fed.textBoxUserName_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[1].Value.ToString();
+                fed.textBoxUserAddress_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[2].Value.ToString();
+                fed.textBoxUserPhone_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[3].Value.ToString();
+                fed.textBoxUserBookArticle_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[4].Value.ToString();
+                fed.textBoxUserGetBookDate_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[5].Value.ToString();
+                fed.textBoxBookUserReturnBookDate_GKU.Text = dataGridViewMain_GKU.Rows[a].Cells[6].Value.ToString();
+                fed.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при измении данных читателя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ToolStripMenuItemFindUser_GKU_Click(object sender, EventArgs e)
+        {
+            FormSearchUser formSearchUser = new FormSearchUser(this);
+            formSearchUser.ShowDialog();
+        }
+
+        private void ToolStripMenuItemDeleteUser_GKU_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewMain_GKU.CurrentRow.Index >= 0)
+                {
+                    int a = dataGridViewMain_GKU.CurrentRow.Index;
+                    dataGridViewMain_GKU.Rows.Remove(dataGridViewMain_GKU.Rows[a]);
+                    if (dataGridViewMain_GKU.Rows.Count == 1)
+                    {
+                        dataGridViewMain_GKU.Rows.Clear();
+                    }
+                }
+                if (dataGridViewMain_GKU.Rows.Count <= 1)
+                {
+                    buttonDeleteUser_GKU.Enabled = false;
+                    buttonChangeUser_GKU.Enabled = false;
+                    buttonFindUser_GKU.Enabled = false;
+                }
+                if (dataGridViewMain_GKU.Rows.Count > 1)
+                {
+                    buttonDeleteUser_GKU.Enabled = true;
+                }
+                buttonUsersBase_GKU.Enabled = false;
+
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении читателя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 
