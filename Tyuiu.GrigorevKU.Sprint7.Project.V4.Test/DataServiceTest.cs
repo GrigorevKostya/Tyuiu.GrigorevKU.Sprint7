@@ -8,8 +8,14 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidGetBase()
         {
+            DataService ds = new DataService();
+            string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\testfile.csv";
+            string[,] res = ds.GetBase(pathSaveFile);
+            string[,] wait = { { "value1", "value2" }, { "value3", "value4" } };
+
+            CollectionAssert.AreEqual(wait, res);
         }
     }
 }
