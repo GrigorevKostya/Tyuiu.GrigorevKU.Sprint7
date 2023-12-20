@@ -72,6 +72,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             panelUnreturned_GKU.Visible = false;
             buttonUnreturnedBook_GKU.Visible = false;
             buttonSaveUserBase_GKU.Enabled = false;
+            ToolStripMenuItemSaveUser_GKU.Enabled = false;
+            ToolStripMenuItemFile_GKU.Enabled = true;
+            ToolStripMenuItemEditUsers_GKU.Enabled = false;
         }
 
         public void buttonBooks_GKU_Click(object sender, EventArgs e)
@@ -203,6 +206,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             panelUnreturned_GKU.Visible = false;
             buttonUnreturnedBook_GKU.Visible = false;
             buttonSaveUserBase_GKU.Enabled = false;
+            ToolStripMenuItemSaveUser_GKU.Enabled = false;
+            ToolStripMenuItemFile_GKU.Enabled = true;
+            ToolStripMenuItemEditUsers_GKU.Enabled = false;
         }
 
         private void ToolStripMenuItemAddBook_GKU_Click(object sender, EventArgs e)
@@ -369,6 +375,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonDeleteBook_GKU.Visible = false;
             buttonFindBook_GKU.Visible = false;
             buttonSaveBookBase_GKU.Enabled = false;
+            ToolStripMenuItemFile_GKU.Enabled = false;
+            ToolStripMenuItemSaveUser_GKU.Enabled = true;
+            ToolStripMenuItemEditBooks_GKU.Enabled = false;
         }
 
         private void buttonUsersBase_GKU_Click(object sender, EventArgs e)
@@ -545,6 +554,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonDeleteBook_GKU.Visible = false;
             buttonFindBook_GKU.Visible = false;
             buttonSaveBookBase_GKU.Enabled = false;
+            ToolStripMenuItemFile_GKU.Enabled = false;
+            ToolStripMenuItemSaveUser_GKU.Enabled = true;
+            ToolStripMenuItemEditBooks_GKU.Enabled = false;
         }
 
         private void ToolStripMenuItemAddUser_GKU_Click(object sender, EventArgs e)
@@ -611,6 +623,102 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             {
                 MessageBox.Show("Ошибка при удалении читателя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonSaveUserBase_GKU_Click(object sender, EventArgs e)
+        {
+            saveFileDialogTask_GKU.FileName = "UsersBase.csv";
+            saveFileDialogTask_GKU.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialogTask_GKU.ShowDialog();
+
+            string path = saveFileDialogTask_GKU.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool FileExists = fileInfo.Exists;
+
+            if (FileExists)
+            {
+                File.Delete(path);
+            }
+
+            int rows = dataGridViewMain_GKU.RowCount;
+            int columns = dataGridViewMain_GKU.ColumnCount;
+
+            string str = "";
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str = str + dataGridViewMain_GKU.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str = str + dataGridViewMain_GKU.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+        }
+
+        private void ToolStripMenuItemSaveUser_GKU_Click(object sender, EventArgs e)
+        {
+            saveFileDialogTask_GKU.FileName = "UsersBase.csv";
+            saveFileDialogTask_GKU.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialogTask_GKU.ShowDialog();
+
+            string path = saveFileDialogTask_GKU.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool FileExists = fileInfo.Exists;
+
+            if (FileExists)
+            {
+                File.Delete(path);
+            }
+
+            int rows = dataGridViewMain_GKU.RowCount;
+            int columns = dataGridViewMain_GKU.ColumnCount;
+
+            string str = "";
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str = str + dataGridViewMain_GKU.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str = str + dataGridViewMain_GKU.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+        }
+
+        private void buttonInfo_GKU_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void ToolStripMenuItemAbout_GKU_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void ToolStripMenuItemInstruction_GKU_Click(object sender, EventArgs e)
+        {
+            FormInstruction forminst = new FormInstruction();
+            forminst.ShowDialog();
         }
     }
 
