@@ -32,7 +32,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             this.buttonOK_GKU = new System.Windows.Forms.Button();
             this.pictureBoxIcon_GKU = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAbout_GKU = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon_GKU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,25 +57,25 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.pictureBoxIcon_GKU.TabIndex = 1;
             this.pictureBoxIcon_GKU.TabStop = false;
             // 
-            // textBox1
+            // textBoxAbout_GKU
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(270, 43);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(329, 267);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBoxAbout_GKU.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxAbout_GKU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxAbout_GKU.Location = new System.Drawing.Point(270, 43);
+            this.textBoxAbout_GKU.Multiline = true;
+            this.textBoxAbout_GKU.Name = "textBoxAbout_GKU";
+            this.textBoxAbout_GKU.ReadOnly = true;
+            this.textBoxAbout_GKU.Size = new System.Drawing.Size(329, 267);
+            this.textBoxAbout_GKU.TabIndex = 2;
+            this.textBoxAbout_GKU.TabStop = false;
+            this.textBoxAbout_GKU.Text = resources.GetString("textBoxAbout_GKU.Text");
             // 
             // FormAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 363);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAbout_GKU);
             this.Controls.Add(this.pictureBoxIcon_GKU);
             this.Controls.Add(this.buttonOK_GKU);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -95,6 +95,6 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
 
         private System.Windows.Forms.Button buttonOK_GKU;
         private System.Windows.Forms.PictureBox pictureBoxIcon_GKU;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAbout_GKU;
     }
 }

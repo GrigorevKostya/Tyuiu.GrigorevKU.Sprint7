@@ -31,7 +31,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStripMainMenu_GKU = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemOpenFile_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpenBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,8 +81,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.panelUnreturned_GKU = new System.Windows.Forms.Panel();
             this.groupBoxUnreturnedBooks_GKU = new System.Windows.Forms.GroupBox();
             this.dataGridViewUnreturnedBooks_GKU = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName_GKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnArticle_GKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelUnreturnedBookss_GKU = new System.Windows.Forms.Label();
             this.dataGridViewMain_GKU = new System.Windows.Forms.DataGridView();
             this.toolTipButton_GKU = new System.Windows.Forms.ToolTip(this.components);
@@ -125,7 +125,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemOpenUser_GKU,
             this.ToolStripMenuItemSaveUser_GKU});
             this.ToolStripMenuItemOpenFile_GKU.Name = "ToolStripMenuItemOpenFile_GKU";
-            this.ToolStripMenuItemOpenFile_GKU.Size = new System.Drawing.Size(59, 26);
+            this.ToolStripMenuItemOpenFile_GKU.Size = new System.Drawing.Size(59, 24);
             this.ToolStripMenuItemOpenFile_GKU.Text = "Файл";
             // 
             // toolStripMenuItemOpenBook_GKU
@@ -164,7 +164,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.ToolStripMenuItemEditBooks_GKU,
             this.ToolStripMenuItemEditUsers_GKU});
             this.ToolStripMenuItemEdit_GKU.Name = "ToolStripMenuItemEdit_GKU";
-            this.ToolStripMenuItemEdit_GKU.Size = new System.Drawing.Size(74, 26);
+            this.ToolStripMenuItemEdit_GKU.Size = new System.Drawing.Size(74, 24);
             this.ToolStripMenuItemEdit_GKU.Text = "Правка";
             // 
             // ToolStripMenuItemEditBooks_GKU
@@ -266,7 +266,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // ToolStripMenuItemInstruction_GKU
             // 
             this.ToolStripMenuItemInstruction_GKU.Name = "ToolStripMenuItemInstruction_GKU";
-            this.ToolStripMenuItemInstruction_GKU.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItemInstruction_GKU.Size = new System.Drawing.Size(187, 26);
             this.ToolStripMenuItemInstruction_GKU.Text = "Руководство ";
             this.ToolStripMenuItemInstruction_GKU.Click += new System.EventHandler(this.ToolStripMenuItemInstruction_GKU_Click);
             // 
@@ -588,8 +588,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewUnreturnedBooks_GKU.AllowUserToDeleteRows = false;
             this.dataGridViewUnreturnedBooks_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUnreturnedBooks_GKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.ColumnName_GKU,
+            this.ColumnArticle_GKU});
             this.dataGridViewUnreturnedBooks_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewUnreturnedBooks_GKU.Location = new System.Drawing.Point(3, 35);
             this.dataGridViewUnreturnedBooks_GKU.Name = "dataGridViewUnreturnedBooks_GKU";
@@ -600,21 +600,21 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewUnreturnedBooks_GKU.Size = new System.Drawing.Size(403, 150);
             this.dataGridViewUnreturnedBooks_GKU.TabIndex = 2;
             // 
-            // Column1
+            // ColumnName_GKU
             // 
-            this.Column1.HeaderText = "ФИО читателя";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
+            this.ColumnName_GKU.HeaderText = "ФИО читателя";
+            this.ColumnName_GKU.MinimumWidth = 6;
+            this.ColumnName_GKU.Name = "ColumnName_GKU";
+            this.ColumnName_GKU.ReadOnly = true;
+            this.ColumnName_GKU.Width = 200;
             // 
-            // Column2
+            // ColumnArticle_GKU
             // 
-            this.Column2.HeaderText = "Артикул книги";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
+            this.ColumnArticle_GKU.HeaderText = "Артикул книги";
+            this.ColumnArticle_GKU.MinimumWidth = 6;
+            this.ColumnArticle_GKU.Name = "ColumnArticle_GKU";
+            this.ColumnArticle_GKU.ReadOnly = true;
+            this.ColumnArticle_GKU.Width = 125;
             // 
             // labelUnreturnedBookss_GKU
             // 
@@ -634,14 +634,14 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewMain_GKU.AllowUserToResizeColumns = false;
             this.dataGridViewMain_GKU.AllowUserToResizeRows = false;
             this.dataGridViewMain_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewMain_GKU.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewMain_GKU.Location = new System.Drawing.Point(3, 18);
             this.dataGridViewMain_GKU.Name = "dataGridViewMain_GKU";
@@ -752,8 +752,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.GroupBox groupBoxUnreturnedBooks_GKU;
         private System.Windows.Forms.DataGridView dataGridViewUnreturnedBooks_GKU;
         private System.Windows.Forms.Button buttonUnreturnedBook_GKU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName_GKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnArticle_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAddUser_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditUser_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFindUser_GKU;
