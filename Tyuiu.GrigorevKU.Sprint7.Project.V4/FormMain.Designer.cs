@@ -31,7 +31,10 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStripMainMenu_GKU = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemOpenFile_GKU = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpenBook_GKU = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +91,15 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.toolTipButton_GKU = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogTask_GKU = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogTask_GKU = new System.Windows.Forms.SaveFileDialog();
+            this.textBoxElementCount_GKU = new System.Windows.Forms.TextBox();
+            this.labelCount_GKU = new System.Windows.Forms.Label();
+            this.groupBoxNewBooks_GKU = new System.Windows.Forms.GroupBox();
+            this.dataGridViewNewBooks_GKU = new System.Windows.Forms.DataGridView();
+            this.labelNewBooks_GKU = new System.Windows.Forms.Label();
+            this.buttonNewBook_GKU = new System.Windows.Forms.Button();
+            this.ColumnNew_GKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnOld = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chartStat_GKU = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStripMainMenu_GKU.SuspendLayout();
             this.panelIcons_GKU.SuspendLayout();
             this.groupBoxIcons_GKU.SuspendLayout();
@@ -102,6 +114,9 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxUnreturnedBooks_GKU.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnreturnedBooks_GKU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_GKU)).BeginInit();
+            this.groupBoxNewBooks_GKU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNewBooks_GKU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStat_GKU)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripMainMenu_GKU
@@ -356,7 +371,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.panelButtons_GKU.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelButtons_GKU.Location = new System.Drawing.Point(0, 96);
             this.panelButtons_GKU.Name = "panelButtons_GKU";
-            this.panelButtons_GKU.Size = new System.Drawing.Size(321, 556);
+            this.panelButtons_GKU.Size = new System.Drawing.Size(321, 602);
             this.panelButtons_GKU.TabIndex = 2;
             // 
             // groupBoxButtons_GKU
@@ -366,7 +381,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxButtons_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxButtons_GKU.Location = new System.Drawing.Point(0, 0);
             this.groupBoxButtons_GKU.Name = "groupBoxButtons_GKU";
-            this.groupBoxButtons_GKU.Size = new System.Drawing.Size(321, 556);
+            this.groupBoxButtons_GKU.Size = new System.Drawing.Size(321, 602);
             this.groupBoxButtons_GKU.TabIndex = 0;
             this.groupBoxButtons_GKU.TabStop = false;
             // 
@@ -380,7 +395,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxUsersButtons_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxUsersButtons_GKU.Location = new System.Drawing.Point(3, 283);
             this.groupBoxUsersButtons_GKU.Name = "groupBoxUsersButtons_GKU";
-            this.groupBoxUsersButtons_GKU.Size = new System.Drawing.Size(315, 270);
+            this.groupBoxUsersButtons_GKU.Size = new System.Drawing.Size(315, 316);
             this.groupBoxUsersButtons_GKU.TabIndex = 2;
             this.groupBoxUsersButtons_GKU.TabStop = false;
             this.groupBoxUsersButtons_GKU.Text = "Работа с базой читателей";
@@ -514,7 +529,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             this.splitterData_GKU.Location = new System.Drawing.Point(321, 96);
             this.splitterData_GKU.Name = "splitterData_GKU";
-            this.splitterData_GKU.Size = new System.Drawing.Size(10, 556);
+            this.splitterData_GKU.Size = new System.Drawing.Size(10, 602);
             this.splitterData_GKU.TabIndex = 3;
             this.splitterData_GKU.TabStop = false;
             // 
@@ -524,7 +539,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.panelData_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelData_GKU.Location = new System.Drawing.Point(331, 96);
             this.panelData_GKU.Name = "panelData_GKU";
-            this.panelData_GKU.Size = new System.Drawing.Size(1085, 556);
+            this.panelData_GKU.Size = new System.Drawing.Size(1085, 602);
             this.panelData_GKU.TabIndex = 4;
             // 
             // groupBoxData_GKU
@@ -534,18 +549,23 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxData_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxData_GKU.Location = new System.Drawing.Point(0, 0);
             this.groupBoxData_GKU.Name = "groupBoxData_GKU";
-            this.groupBoxData_GKU.Size = new System.Drawing.Size(1085, 556);
+            this.groupBoxData_GKU.Size = new System.Drawing.Size(1085, 602);
             this.groupBoxData_GKU.TabIndex = 0;
             this.groupBoxData_GKU.TabStop = false;
             // 
             // groupBoxInfo_GKU
             // 
+            this.groupBoxInfo_GKU.Controls.Add(this.chartStat_GKU);
+            this.groupBoxInfo_GKU.Controls.Add(this.buttonNewBook_GKU);
+            this.groupBoxInfo_GKU.Controls.Add(this.groupBoxNewBooks_GKU);
+            this.groupBoxInfo_GKU.Controls.Add(this.labelCount_GKU);
+            this.groupBoxInfo_GKU.Controls.Add(this.textBoxElementCount_GKU);
             this.groupBoxInfo_GKU.Controls.Add(this.buttonUnreturnedBook_GKU);
             this.groupBoxInfo_GKU.Controls.Add(this.panelUnreturned_GKU);
             this.groupBoxInfo_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxInfo_GKU.Location = new System.Drawing.Point(3, 344);
             this.groupBoxInfo_GKU.Name = "groupBoxInfo_GKU";
-            this.groupBoxInfo_GKU.Size = new System.Drawing.Size(1079, 209);
+            this.groupBoxInfo_GKU.Size = new System.Drawing.Size(1079, 255);
             this.groupBoxInfo_GKU.TabIndex = 1;
             this.groupBoxInfo_GKU.TabStop = false;
             this.groupBoxInfo_GKU.Text = "Дополнительная информация";
@@ -553,7 +573,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // buttonUnreturnedBook_GKU
             // 
             this.buttonUnreturnedBook_GKU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonUnreturnedBook_GKU.Location = new System.Drawing.Point(418, 154);
+            this.buttonUnreturnedBook_GKU.Location = new System.Drawing.Point(418, 202);
             this.buttonUnreturnedBook_GKU.Name = "buttonUnreturnedBook_GKU";
             this.buttonUnreturnedBook_GKU.Size = new System.Drawing.Size(125, 49);
             this.buttonUnreturnedBook_GKU.TabIndex = 3;
@@ -568,7 +588,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.panelUnreturned_GKU.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelUnreturned_GKU.Location = new System.Drawing.Point(3, 18);
             this.panelUnreturned_GKU.Name = "panelUnreturned_GKU";
-            this.panelUnreturned_GKU.Size = new System.Drawing.Size(409, 188);
+            this.panelUnreturned_GKU.Size = new System.Drawing.Size(409, 234);
             this.panelUnreturned_GKU.TabIndex = 2;
             this.panelUnreturned_GKU.Visible = false;
             // 
@@ -579,7 +599,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.groupBoxUnreturnedBooks_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxUnreturnedBooks_GKU.Location = new System.Drawing.Point(0, 0);
             this.groupBoxUnreturnedBooks_GKU.Name = "groupBoxUnreturnedBooks_GKU";
-            this.groupBoxUnreturnedBooks_GKU.Size = new System.Drawing.Size(409, 188);
+            this.groupBoxUnreturnedBooks_GKU.Size = new System.Drawing.Size(409, 234);
             this.groupBoxUnreturnedBooks_GKU.TabIndex = 0;
             this.groupBoxUnreturnedBooks_GKU.TabStop = false;
             // 
@@ -597,7 +617,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewUnreturnedBooks_GKU.RowHeadersVisible = false;
             this.dataGridViewUnreturnedBooks_GKU.RowHeadersWidth = 51;
             this.dataGridViewUnreturnedBooks_GKU.RowTemplate.Height = 24;
-            this.dataGridViewUnreturnedBooks_GKU.Size = new System.Drawing.Size(403, 150);
+            this.dataGridViewUnreturnedBooks_GKU.Size = new System.Drawing.Size(403, 196);
             this.dataGridViewUnreturnedBooks_GKU.TabIndex = 2;
             // 
             // ColumnName_GKU
@@ -634,14 +654,14 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.dataGridViewMain_GKU.AllowUserToResizeColumns = false;
             this.dataGridViewMain_GKU.AllowUserToResizeRows = false;
             this.dataGridViewMain_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMain_GKU.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewMain_GKU.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewMain_GKU.Location = new System.Drawing.Point(3, 18);
             this.dataGridViewMain_GKU.Name = "dataGridViewMain_GKU";
@@ -663,11 +683,124 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             // 
             this.openFileDialogTask_GKU.FileName = "openFileDialog1";
             // 
+            // textBoxElementCount_GKU
+            // 
+            this.textBoxElementCount_GKU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxElementCount_GKU.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxElementCount_GKU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxElementCount_GKU.Location = new System.Drawing.Point(987, 36);
+            this.textBoxElementCount_GKU.Name = "textBoxElementCount_GKU";
+            this.textBoxElementCount_GKU.ReadOnly = true;
+            this.textBoxElementCount_GKU.Size = new System.Drawing.Size(83, 15);
+            this.textBoxElementCount_GKU.TabIndex = 4;
+            this.textBoxElementCount_GKU.Visible = false;
+            this.textBoxElementCount_GKU.TextChanged += new System.EventHandler(this.textBoxElementCount_GKU_TextChanged);
+            // 
+            // labelCount_GKU
+            // 
+            this.labelCount_GKU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCount_GKU.AutoSize = true;
+            this.labelCount_GKU.Location = new System.Drawing.Point(836, 34);
+            this.labelCount_GKU.Name = "labelCount_GKU";
+            this.labelCount_GKU.Size = new System.Drawing.Size(90, 17);
+            this.labelCount_GKU.TabIndex = 5;
+            this.labelCount_GKU.Text = "Количество:";
+            this.labelCount_GKU.Visible = false;
+            this.labelCount_GKU.Click += new System.EventHandler(this.labelCount_GKU_Click);
+            // 
+            // groupBoxNewBooks_GKU
+            // 
+            this.groupBoxNewBooks_GKU.Controls.Add(this.dataGridViewNewBooks_GKU);
+            this.groupBoxNewBooks_GKU.Controls.Add(this.labelNewBooks_GKU);
+            this.groupBoxNewBooks_GKU.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBoxNewBooks_GKU.Location = new System.Drawing.Point(412, 18);
+            this.groupBoxNewBooks_GKU.Name = "groupBoxNewBooks_GKU";
+            this.groupBoxNewBooks_GKU.Size = new System.Drawing.Size(409, 234);
+            this.groupBoxNewBooks_GKU.TabIndex = 3;
+            this.groupBoxNewBooks_GKU.TabStop = false;
+            this.groupBoxNewBooks_GKU.Visible = false;
+            // 
+            // dataGridViewNewBooks_GKU
+            // 
+            this.dataGridViewNewBooks_GKU.AllowUserToDeleteRows = false;
+            this.dataGridViewNewBooks_GKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNewBooks_GKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnNew_GKU,
+            this.ColumnOld});
+            this.dataGridViewNewBooks_GKU.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewNewBooks_GKU.Location = new System.Drawing.Point(3, 35);
+            this.dataGridViewNewBooks_GKU.Name = "dataGridViewNewBooks_GKU";
+            this.dataGridViewNewBooks_GKU.ReadOnly = true;
+            this.dataGridViewNewBooks_GKU.RowHeadersVisible = false;
+            this.dataGridViewNewBooks_GKU.RowHeadersWidth = 51;
+            this.dataGridViewNewBooks_GKU.RowTemplate.Height = 24;
+            this.dataGridViewNewBooks_GKU.Size = new System.Drawing.Size(403, 196);
+            this.dataGridViewNewBooks_GKU.TabIndex = 2;
+            this.dataGridViewNewBooks_GKU.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNewBooks_GKU_CellContentClick);
+            // 
+            // labelNewBooks_GKU
+            // 
+            this.labelNewBooks_GKU.AutoSize = true;
+            this.labelNewBooks_GKU.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelNewBooks_GKU.Location = new System.Drawing.Point(3, 18);
+            this.labelNewBooks_GKU.Name = "labelNewBooks_GKU";
+            this.labelNewBooks_GKU.Size = new System.Drawing.Size(188, 17);
+            this.labelNewBooks_GKU.TabIndex = 1;
+            this.labelNewBooks_GKU.Text = "Количество новых изданий";
+            // 
+            // buttonNewBook_GKU
+            // 
+            this.buttonNewBook_GKU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNewBook_GKU.Location = new System.Drawing.Point(418, 147);
+            this.buttonNewBook_GKU.Name = "buttonNewBook_GKU";
+            this.buttonNewBook_GKU.Size = new System.Drawing.Size(125, 49);
+            this.buttonNewBook_GKU.TabIndex = 6;
+            this.buttonNewBook_GKU.Text = "Вывести";
+            this.buttonNewBook_GKU.UseVisualStyleBackColor = true;
+            this.buttonNewBook_GKU.Visible = false;
+            this.buttonNewBook_GKU.Click += new System.EventHandler(this.buttonNewBook_GKU_Click);
+            // 
+            // ColumnNew_GKU
+            // 
+            this.ColumnNew_GKU.HeaderText = "Новых изданий";
+            this.ColumnNew_GKU.MinimumWidth = 6;
+            this.ColumnNew_GKU.Name = "ColumnNew_GKU";
+            this.ColumnNew_GKU.ReadOnly = true;
+            this.ColumnNew_GKU.Width = 125;
+            // 
+            // ColumnOld
+            // 
+            this.ColumnOld.HeaderText = "Старых изданий";
+            this.ColumnOld.MinimumWidth = 6;
+            this.ColumnOld.Name = "ColumnOld";
+            this.ColumnOld.ReadOnly = true;
+            this.ColumnOld.Width = 125;
+            // 
+            // chartStat_GKU
+            // 
+            this.chartStat_GKU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartStat_GKU.BackColor = System.Drawing.SystemColors.Control;
+            chartArea2.Name = "ChartArea1";
+            this.chartStat_GKU.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStat_GKU.Legends.Add(legend2);
+            this.chartStat_GKU.Location = new System.Drawing.Point(683, 53);
+            this.chartStat_GKU.Name = "chartStat_GKU";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Single;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Single;
+            this.chartStat_GKU.Series.Add(series2);
+            this.chartStat_GKU.Size = new System.Drawing.Size(387, 196);
+            this.chartStat_GKU.TabIndex = 7;
+            this.chartStat_GKU.Visible = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1416, 652);
+            this.ClientSize = new System.Drawing.Size(1416, 698);
             this.Controls.Add(this.panelData_GKU);
             this.Controls.Add(this.splitterData_GKU);
             this.Controls.Add(this.panelButtons_GKU);
@@ -689,11 +822,16 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             this.panelData_GKU.ResumeLayout(false);
             this.groupBoxData_GKU.ResumeLayout(false);
             this.groupBoxInfo_GKU.ResumeLayout(false);
+            this.groupBoxInfo_GKU.PerformLayout();
             this.panelUnreturned_GKU.ResumeLayout(false);
             this.groupBoxUnreturnedBooks_GKU.ResumeLayout(false);
             this.groupBoxUnreturnedBooks_GKU.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnreturnedBooks_GKU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_GKU)).EndInit();
+            this.groupBoxNewBooks_GKU.ResumeLayout(false);
+            this.groupBoxNewBooks_GKU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNewBooks_GKU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStat_GKU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,6 +896,15 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditUser_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFindUser_GKU;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemDeleteUser_GKU;
+        private System.Windows.Forms.Label labelCount_GKU;
+        private System.Windows.Forms.TextBox textBoxElementCount_GKU;
+        private System.Windows.Forms.Button buttonNewBook_GKU;
+        private System.Windows.Forms.GroupBox groupBoxNewBooks_GKU;
+        private System.Windows.Forms.DataGridView dataGridViewNewBooks_GKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNew_GKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOld;
+        private System.Windows.Forms.Label labelNewBooks_GKU;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStat_GKU;
     }
 }
 

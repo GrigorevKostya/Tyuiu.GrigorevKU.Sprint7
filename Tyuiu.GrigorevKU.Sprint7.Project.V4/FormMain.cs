@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 using Tyuiu.GrigorevKU.Sprint7.Project.V4.Lib;
 
 namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
@@ -120,6 +121,12 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             buttonAddBook_GKU.Visible = true;
             ToolStripMenuItemEditBooks_GKU.Enabled = true;
             buttonSaveBookBase_GKU.Enabled = true;
+            textBoxElementCount_GKU.Visible = true;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
+            labelCount_GKU.Visible = true;
+            labelCount_GKU.Text = "Количество книг:";
+            groupBoxNewBooks_GKU.Visible = true;
+            buttonNewBook_GKU.Visible = true;
 
         }
 
@@ -147,6 +154,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                     buttonDeleteBook_GKU.Enabled = true;
                 }
                 buttonBooks_GKU.Enabled = false;
+                textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
 
             }
             catch
@@ -160,6 +168,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             FormAddBook formAddBook = new FormAddBook(this);
             formAddBook.ShowDialog();
             buttonBooks_GKU.Enabled = false;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
         }
 
         private void buttonChangeBook_GKU_Click(object sender, EventArgs e)
@@ -209,6 +218,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             ToolStripMenuItemSaveUser_GKU.Enabled = false;
             ToolStripMenuItemFile_GKU.Enabled = true;
             ToolStripMenuItemEditUsers_GKU.Enabled = false;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
         }
 
         private void ToolStripMenuItemAddBook_GKU_Click(object sender, EventArgs e)
@@ -216,6 +226,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             FormAddBook formAddBook = new FormAddBook(this);
             formAddBook.ShowDialog();
             buttonBooks_GKU.Enabled = false;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
         }
 
         private void ToolStripMenuItemEditBook_GKU_Click(object sender, EventArgs e)
@@ -270,6 +281,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                     buttonDeleteBook_GKU.Enabled = true;
                 }
                 buttonBooks_GKU.Enabled = false;
+                textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
 
             }
             catch
@@ -426,6 +438,11 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             panelUnreturned_GKU.Visible = true;
             buttonUnreturnedBook_GKU.Visible = true;
             ToolStripMenuItemEditUsers_GKU.Enabled = true;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
+            labelCount_GKU.Text = "Количество записей:";
+            groupBoxNewBooks_GKU.Visible = false;
+            buttonNewBook_GKU.Visible = false;
+            chartStat_GKU.Visible = false;
 
         }
 
@@ -434,6 +451,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             FormAddUser formAddUser = new FormAddUser(this);
             formAddUser.ShowDialog();
             buttonUsersBase_GKU.Enabled = false;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
         }
 
         private void buttonDeleteUser_GKU_Click(object sender, EventArgs e)
@@ -460,6 +478,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                     buttonDeleteUser_GKU.Enabled = true;
                 }
                 buttonUsersBase_GKU.Enabled = false;
+                textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
+                buttonUnreturnedBook_GKU.Enabled = true;
 
             }
             catch
@@ -504,6 +524,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             try
             {
+                dataGridViewUnreturnedBooks_GKU.Rows.Clear();
                 dataGridViewUnreturnedBooks_GKU.Columns[0].Width = 200;
                 dataGridViewUnreturnedBooks_GKU.Columns[1].Width = 100;
                 dataGridViewUnreturnedBooks_GKU.ColumnCount = 2;
@@ -527,6 +548,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                         i--;
                     }
                 }
+
 
             }
             catch
@@ -557,6 +579,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             ToolStripMenuItemFile_GKU.Enabled = false;
             ToolStripMenuItemSaveUser_GKU.Enabled = true;
             ToolStripMenuItemEditBooks_GKU.Enabled = false;
+            groupBoxNewBooks_GKU.Visible = false;
+            buttonNewBook_GKU.Visible = false;
         }
 
         private void ToolStripMenuItemAddUser_GKU_Click(object sender, EventArgs e)
@@ -564,6 +588,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             FormAddUser formAddUser = new FormAddUser(this);
             formAddUser.ShowDialog();
             buttonUsersBase_GKU.Enabled = false;
+            textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
         }
 
         private void ToolStripMenuItemEditUser_GKU_Click(object sender, EventArgs e)
@@ -617,6 +642,7 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
                     buttonDeleteUser_GKU.Enabled = true;
                 }
                 buttonUsersBase_GKU.Enabled = false;
+                textBoxElementCount_GKU.Text = dataGridViewMain_GKU.Rows.Count.ToString();
 
             }
             catch
@@ -719,6 +745,67 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
         {
             FormInstruction forminst = new FormInstruction();
             forminst.ShowDialog();
+        }
+
+        private void textBoxElementCount_GKU_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCount_GKU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartStatistics_GKU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNewBook_GKU_Click(object sender, EventArgs e)
+        {
+            int newbook = 0;
+            int oldbook = 0;
+            for(int i = 0; i < dataGridViewMain_GKU.RowCount; i++)
+            {
+                for(int j = 5; j <= 5; j++)
+                {
+                    if(dataGridViewMain_GKU.Rows[i].Cells[j].Value.ToString() == "да")
+                    {
+                        newbook++;
+                    }
+                    else
+                    {
+                        oldbook++;
+                    }
+                }
+            }
+            dataGridViewNewBooks_GKU.Rows[0].Cells[0].Value = Convert.ToString(newbook);
+            dataGridViewNewBooks_GKU.Rows[0].Cells[1].Value = Convert.ToString(oldbook);
+
+            chartStat_GKU.Visible = true;
+
+            chartStat_GKU.Series.Clear();
+
+            Series oldSeries = new Series();
+            oldSeries.Name = "Старые издания";
+            oldSeries.ChartType = SeriesChartType.Column;
+
+            Series newSeries = new Series();
+            newSeries.Name = "Новые издания";
+            newSeries.ChartType = SeriesChartType.Column;
+
+            newSeries.Points.AddXY(0, dataGridViewNewBooks_GKU.Rows[0].Cells[1].Value);
+            oldSeries.Points.AddXY(1, dataGridViewNewBooks_GKU.Rows[0].Cells[0].Value);
+
+            chartStat_GKU.Series.Add(oldSeries);
+            chartStat_GKU.Series.Add(newSeries);
+
+        }
+
+        private void dataGridViewNewBooks_GKU_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
