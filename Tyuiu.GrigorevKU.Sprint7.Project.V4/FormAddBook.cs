@@ -26,9 +26,17 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
 
         private void buttonAddNewBook_GKU_Click(object sender, EventArgs e)
         {
-            fmain.dataGridViewMain_GKU.Rows.Add(textBoxBookArticle_GKU.Text, textBoxBookName_GKU.Text, textBoxBookAuthor_GKU.Text, textBoxBookYear_GKU.Text, textBoxBookGenre_GKU.Text, comboBoxIsBookNew_GKU.Text, textBoxBookAnnotation_GKU.Text);
-            fmain.buttonDeleteBook_GKU.Enabled = true;
-            this.Close();
+            if(comboBoxIsBookNew_GKU.Text == "")
+            {
+                MessageBox.Show("Ошибка при добавлении книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                fmain.dataGridViewMain_GKU.Rows.Add(textBoxBookArticle_GKU.Text, textBoxBookName_GKU.Text, textBoxBookAuthor_GKU.Text, textBoxBookYear_GKU.Text, textBoxBookGenre_GKU.Text, comboBoxIsBookNew_GKU.Text, textBoxBookAnnotation_GKU.Text);
+                fmain.buttonDeleteBook_GKU.Enabled = true;
+                this.Close();
+            }
+
         }
     }
 }

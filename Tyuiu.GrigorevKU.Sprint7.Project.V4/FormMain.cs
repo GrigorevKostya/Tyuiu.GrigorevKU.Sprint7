@@ -795,8 +795,8 @@ namespace Tyuiu.GrigorevKU.Sprint7.Project.V4
             newSeries.Name = "Новые издания";
             newSeries.ChartType = SeriesChartType.Column;
 
-            newSeries.Points.AddXY(0, dataGridViewNewBooks_GKU.Rows[0].Cells[1].Value);
-            oldSeries.Points.AddXY(1, dataGridViewNewBooks_GKU.Rows[0].Cells[0].Value);
+            newSeries.Points.AddXY(0, dataGridViewNewBooks_GKU.Rows[0].Cells[0].Value);
+            oldSeries.Points.AddXY(1, dataGridViewNewBooks_GKU.Rows[0].Cells[1].Value);
 
             chartStat_GKU.Series.Add(oldSeries);
             chartStat_GKU.Series.Add(newSeries);
